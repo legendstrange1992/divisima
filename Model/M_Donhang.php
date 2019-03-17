@@ -18,5 +18,13 @@
             $row = mysqli_fetch_assoc($data);
             return $row;
         }
+        public function Get_All(){
+            $result = mysqli_query($this->ketnoi,"select * from donhang");
+            $data = [];
+            while($row = mysqli_fetch_assoc($result)){
+                $data[] = $row;
+            }
+            return $data;
+        }
 	}
  ?>

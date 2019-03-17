@@ -7,5 +7,13 @@
             mysqli_query($this->ketnoi,$sql);
             return 'success';
         }
+        public function Get_Donhang_By_ID_donhang($id_donhang){
+            $result = mysqli_query($this->ketnoi,"select * from chitietdonhang where id_donhang = $id_donhang");
+            $data = [];
+            while($row = mysqli_fetch_assoc($result)){
+                $data[] = $row;
+            }
+            return $data;
+        }
 	}
  ?>
